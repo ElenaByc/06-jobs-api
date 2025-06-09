@@ -10,6 +10,6 @@ const {
 } = require('../controllers/quizzes')
 
 router.route('/').post(createQuiz).get(getAllQuizzes)
-router.route('/:_id').get(getQuiz).patch(updateQuiz).delete(deleteQuiz)
+router.route('/:id').get(getQuiz).patch(updateQuiz).delete(deleteQuiz)
 
 module.exports = router
