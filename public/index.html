@@ -59,14 +59,21 @@
     <div id="quizzes" style="display:none;">
         <h2>Quizzes</h2>
         <p id="quizzes-message"></p>
-        <table id="quizzes-table">
-            <tr id="quizzes-table-header">
-                <th>Title</th>
-                <th>Subject</th>
-                <th>Description</th>
-                <th colspan="2"></th>
-            </tr>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Subject</th>
+                    <th>Description</th>
+                    <th colspan="2"></th>
+                </tr>
+            </thead>
+            <tbody id="quizzes-table-body">
+                <!-- Quiz data rows will go here -->
+            </tbody>
         </table>
+
         <button type="button" id="add-quiz">add quiz</button>
         <button type="button" id="logout">log out</button>
     </div>
@@ -75,31 +82,30 @@
         <h2>Edit Quiz</h2>
         <form id="edit-quiz-form">
             <div>
-                <label for="quizTitle">Title:</label>
-                <input type="text" id="quizTitle" />
+                <label for="quiz-title">Title:</label>
+                <input type="text" id="quiz-title" />
             </div>
             <div>
-                <label for="quizDescription">Description:</label>
-                <input type="text" id="quizDescription" />
+                <label for="quiz-description">Description:</label>
+                <input type="text" id="quiz-description" />
             </div>
             <div>
-                <label for="quizSubject">Subject:</label>
-                <select id="quizSubject">
+                <label for="quiz-subject">Subject:</label>
+                <select id="quiz-subject">
+                    <option value="" disabled selected>--Select subject--</option>
                     <option value="Math">Math</option>
                     <option value="Science">Science</option>
                     <option value="History">History</option>
                     <option value="Literature">Literature</option>
                     <option value="Geography">Geography</option>
-                    <option value="Other">Other</option>
                 </select>
             </div>
             <!--    TODO: Question and answer fields.
                     This part is complex due to the nested structure of the quiz model.
                     This functionality will be addressed later, potentially after 
                     the quiz model has been reorganized. -->
-
-            <button type="submit" id="adding-quiz">Add</button>
-            <button type="button" id="edit-quiz-cancel">Cancel</button>
+            <button type="submit" id="submit-quiz">Save</button>
+            <button type="button" id="cancel-edit-quiz">Cancel</button>
         </form>
     </div>
 

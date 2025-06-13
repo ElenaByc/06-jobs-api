@@ -25,6 +25,10 @@ export const setMessage = (text) => {
   }
 }
 
+export const isMessageEmpty = () => {
+  return !message || message.textContent.trim() === ''
+}
+
 // Function to set the active div: hides the previous one and shows the new one
 export const setActiveDiv = (newDiv) => {
   if (newDiv === activeDiv) {
